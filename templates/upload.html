@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+<head>
+  <head style="background-color:lightblue;">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P6635QH7MW"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-P6635QH7MW');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="{{url_for('static', filename='bootstrap.min.css')}}" />
+    <link rel="stylesheet" href="{{url_for('static', filename='lost.css')}}" />
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" />
+    
+
+
+    <title>Excel Uploader</title>
+
+</head>
+<body>
+
+<body style="background-color:lightblue;">
+
+
+<main>
+  <center>
+  <center<p>Click on the downLoad link to Download the excel document. Input One Canadian city in cell A1 on Sheet 1 and Sheet 2.</p>
+
+  <p> Leave sheet 3 blank</p>
+ 
+    <p>
+    <a href="static/weather_info.xlsx">Dowload</a>
+    </p></center>
+
+  </center>
+</main>
+
+<center>
+
+<form method="POST" action="/excel" enctype="multipart/form-data" >
+    <dl>
+		<p>
+            <br><br><p>
+			Upload the downloaded excel file to get the results</p<br><br> 
+            <input type="file" name="file" autocomplete="off" required>
+		</p>
+    </dl>
+    <p>
+		<input type="submit" class="btn btn-primary rounded-0" value="Submit">
+	</p>
+</form>
+
+<p>
+	{% with messages = get_flashed_messages() %}
+	  {% if messages %}
+		<ul class=flashes>
+		{% for message in messages %}
+		  <li>{{ message }}</li>
+		{% endfor %}
+		</ul>
+	  {% endif %}
+	{% endwith %}
+</p>
+
+<br><br>
+<a href='/static/possum.jpg'>.</a>
+
+</center>
+
+
+<footer class="fixed_footer">
+  <div class="content">
+    <center>
+    <p>Copyright - Excel Upload</p>
+    </center>
+  </div>
+</footer>
+
+</body>
+</html>
